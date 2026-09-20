@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string str, npr;
+    cin >> str >> npr;
+
+    if (str.length() != npr.length()) {
+        cout << "not anagram";
+        return 0;
+    }
+
+    unordered_map<char, int> mp, np;
+
+    for (char c : str)
+        mp[c]++;
+
+    for (char c : npr)
+        np[c]++;
+
+    for (auto it : mp) {
+        if (np[it.first] != it.second) {
+            cout << "not anagram";
+            return 0;
+        }
+    }
+
+    cout << "anagram";
+}
