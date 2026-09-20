@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string word;
+    cin >> word;
+
+    int i = 0;
+    int j = word.length() - 1;
+
+    while (i < j) {
+        if (word[i] != word[j]) {
+            cout << "Not Palindrome";
+            return 0;
+        }
+        i++;
+        j--;
+    }
+
+    cout << "Palindrome";
+    return 0;
+}
